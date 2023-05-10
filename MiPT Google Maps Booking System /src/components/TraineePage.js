@@ -145,33 +145,33 @@ const TraineePage = () => {
       <button onClick={handleSearch}>Search</button>
 
       <MapComponent markerPosition={markerPosition}>
-        {filteredEvents.map((event) => (
-          <Marker
-            key={event.id}
-            position={{ lat: event.lat, lng: event.lng }}
-            onClick={() => setSelectedEvent(event)}
-            onMouseOver={() => setHoveredEventId(event.id)}
-            onMouseOut={() => setHoveredEventId(null)}
-            icon={{
-              url: hoveredEventId === event.id ? 'https://maps.google.com/mapfiles/kml/shapes/parking_lot_maps.png' : 'https://maps.google.com/mapfiles/kml/shapes/sailing_maps.png',
-              scaledSize: new window.google.maps.Size(30, 30),
-            }}
-          />
-        ))}
-        {selectedEvent && (
-          <InfoWindow
-            position={{ lat: selectedEvent.lat, lng: selectedEvent.lng }}
-            onCloseClick={() => setSelectedEvent(null)}
-          >
-            <div>
-              <h4>{selectedEvent.activity}</h4>
-              <p>
-                {selectedEvent.date} - {selectedEvent.time}
-              </p>
-            </div>
-          </InfoWindow>
-        )}
-      </MapComponent>
+  {filteredEvents.map((event) => (
+    <Marker
+      key={event.id}
+      position={{ lat: event.lat, lng: event.lng }}
+      onClick={() => setSelectedEvent(event)}
+      onMouseOver={() => setHoveredEventId(event.id)}
+      onMouseOut={() => setHoveredEventId(null)}
+      icon={{
+        url: hoveredEventId === event.id ? 'https://maps.google.com/mapfiles/kml/shapes/parking_lot_maps.png' : 'https://maps.google.com/mapfiles/kml/shapes/sailing_maps.png',
+        scaledSize: new window.google.maps.Size(30, 30),
+      }}
+    />
+  ))}
+  {selectedEvent && (
+    <InfoWindow
+      position={{ lat: selectedEvent.lat, lng: selectedEvent.lng }}
+      onCloseClick={() => setSelectedEvent(null)}
+    >
+      <div>
+        <h4>{selectedEvent.activity}</h4>
+        <p>
+          {selectedEvent.date} - {selectedEvent.time}
+        </p>
+      </div>
+    </InfoWindow>
+  )}
+</MapComponent>
 
       <ul>
         {filteredEvents.map((event) => (
