@@ -8,7 +8,7 @@ const mapContainerStyle = {
   height: '400px',
 };
 
-const MapComponent = ({ onMapClick, markerPosition }) => {
+const MapComponent = ({ onMapClick, markerPosition, children }) => {
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: '',
     libraries,
@@ -25,6 +25,7 @@ const MapComponent = ({ onMapClick, markerPosition }) => {
       onClick={onMapClick}
     >
       {window.google && markerPosition && <Marker position={markerPosition} />}
+      {children}
     </GoogleMap>
   );
 };
