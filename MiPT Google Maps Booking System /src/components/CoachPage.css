@@ -1,0 +1,36 @@
+.coach-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.columns {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 1rem;
+}
+
+.column {
+  flex: 1;
+  margin: 0 0.5rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.status.accepted {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.status.rejected {
+  background-color: #f44336;
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
