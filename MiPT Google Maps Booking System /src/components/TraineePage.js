@@ -153,7 +153,7 @@ const TraineePage = () => {
       onMouseOver={() => setHoveredEventId(event.id)}
       onMouseOut={() => setHoveredEventId(null)}
       icon={{
-        url: hoveredEventId === event.id ? 'https://maps.google.com/mapfiles/kml/shapes/parking_lot_maps.png' : 'https://maps.google.com/mapfiles/kml/shapes/sailing_maps.png',
+        url: hoveredEventId === event.id ? 'https://maps.google.com/mapfiles/kml/shapes/info.png' : 'https://maps.google.com/mapfiles/kml/shapes/target.png',
         scaledSize: new window.google.maps.Size(30, 30),
       }}
     />
